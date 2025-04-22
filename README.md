@@ -19,11 +19,12 @@ For each dataset, the following three smoothing approaches are applied:
 
 This results in a total of **six R scripts**, organized as follows:
 
-/radiation ├── unweighted_radiation.R ├── weighted1_radiation.R └── weighted2_radiation.R
+| Dataset         | Unweighted Script             | Weighted Script 1              | Weighted Script 2              |
+|------------------|-------------------------------|--------------------------------|--------------------------------|
+| Radiation        | `unweighted_radiation.R`      | `weighted1_radiation.R`        | `weighted2_radiation.R`        |
+| Hedge Funds      | `unweighted_hedgefunds.R`     | `weighted1_hedgefunds.R`       | `weighted2_hedgefunds.R`       |
 
-/hedge_funds ├── unweighted_hedgefunds.R ├── weighted1_hedgefunds.R └── weighted2_hedgefunds.R
-
-
+---
 ## **2. Figures**
 
 All graphical outputs from the analysis are available in the following folders:
