@@ -6,7 +6,7 @@
 
 ---
 
-## 1. Overview
+# Overview
 
 This repository houses all code and data pipelines for:
 
