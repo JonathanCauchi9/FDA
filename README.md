@@ -1,50 +1,48 @@
-# **Functional Data Analysis: Outputs and Figures**
+# Investigating Different Weighting Approaches for Functional PCA
 
-This repository contains the **R scripts** and resulting **outputs** for an application of Functional Data Analysis (FDA) conducted on two distinct datasets:
-
-- **Global Radiation Dataset**  
-- **Hedge Fund Returns Dataset**
-
-All code and figures were produced using **RStudio**.
+**Author:** Jonathan Cauchi  
+**Degree:** B.Sc. (Hons.), Department of Statistics & OR, University of Malta  
+**Date:** May 2025  
 
 ---
 
-## **1. Structure of the Repository**
+## 1. Overview
 
-For each dataset, the following three smoothing approaches are applied:
+This repository houses all code and data pipelines for:
 
-- **Unweighted approach**  
-- **AR(1)-weighted approach**  
-- **Custom-weighted approach** (please update with the method’s name if applicable)
+> **Investigating Different Weighting Approaches for Functional Principal Components Analysis**  
+> Jonathan Cauchi, May 2025
 
-This results in a total of **six R scripts**, organized as follows:
+We apply **Functional Data Analysis (FDA)**—with a focus on **Functional PCA (FPCA)**—to two real-world time series:
 
-| Dataset         | Unweighted Script             | Weighted Script 1              | Weighted Script 2              |
-|------------------|-------------------------------|--------------------------------|--------------------------------|
-| Radiation        | `unweighted_radiation.R`      | `weighted1_radiation.R`        | `weighted2_radiation.R`        |
-| Hedge Funds      | `unweighted_hedgefunds.R`     | `weighted1_hedgefunds.R`       | `weighted2_hedgefunds.R`       |
+1. **Radiation levels** at Dutch KNMI weather stations  
+2. **Daily closing prices** of assets in a hedge-fund portfolio  
+
+Four weighting schemes are compared:
+
+- Unweighted  
+- Auto-Regressive (AR)  
+- Rolling-variance  
+- GARCH-based  
+
+We demonstrate how each affects smoothing, eigencomponent estimation, and FPCA results.
 
 ---
-## **2. Figures**
 
-All graphical outputs from the analysis are available in the following folders:
+## 2. Repository Layout
 
-- `/figures_radiation` – for plots generated from the radiation dataset  
-- `/figures_hedgefunds` – for plots generated from the hedge fund dataset
-
-These will be updated progressively as the work is finalized.
-
-## **3. Data**
-
-- **Radiation Dataset**: A public download link will be provided shortly.  
-- **Hedge Fund Dataset**: Included in this repository as an `.RDA` file. Refer to the following path:  
-  `/data/hedge_fund_returns.RDA`
-
-## **4. Dissertation Reference**
-
-The figures and code presented in this repository form part of the empirical work conducted for my dissertation, entitled:
-
-> **“Volatility and Performance: Do Hedge Fund Indices with Higher Volatility Offer Better Risk-Adjusted Returns?”**
-
-The full dissertation—containing theoretical background, methodological details, and interpretation of results—can be accessed via the following link:  
-[**Insert Dissertation Link Here**]
+```text
+/
+├── data/
+│   ├── radiation_levels.csv        # Raw KNMI radiation data
+│   └── hedge_fund_returns.RDA      # Hedge-fund returns (R data file)
+│
+├── scripts/
+│   ├── 01_preprocessing.R          # Imputation & weight construction
+│   ├── 02_smoothing.R              # Basis setup & GCV-driven smoothing
+│   ├── 03_fpca_analysis.R          # FPCA under each weighting scheme
+│   └── 04_derivative_estimation.R  # First/second derivative estimation
+│
+├── figures/                        # Generated plots (.png, .pdf)
+├── tables/                         # LaTeX-ready summary tables
+└── README.md                       # This file
