@@ -16,8 +16,19 @@ This repository houses all code and data pipelines for:
 We apply **Functional Data Analysis (FDA)**—with a focus on **Functional PCA (FPCA)**—to two real-world time series:
 
 1. **Radiation levels** at Dutch KNMI weather stations  
-2. **Daily closing prices** of assets in a hedge-fund portfolio  
+2. **Daily closing prices** of assets in a hedge-fund portfolio
 
+The folders in this repository contain the following material:
+
+1. **Raw Data**  
+   Contains all the original datasets used in this dissertation.
+
+2. **Figures & Results**  
+   Includes the relevant figures and results generated during the analysis.
+
+3. **R Scripts**  
+   Houses the R scripts used to produce the figures and results.
+   
 Four weighting schemes are compared:
 
 - Unweighted  
